@@ -6,6 +6,31 @@
 1. We must always use the the region Ireland which when using linux will be known as `eu-west-1`
 2. Always keep our password private and safe and not share with anyone.
 
+### Launching an EC2 instance:
+
+1. We first select EC2 and create an instance.
+2. we choose the name belal-tech201-app
+3. Choose Ubuntu version 18.04
+4. make sure we choose the correct key pair for us devops-tech201
+5. Default VPC
+6. Subnet Devops student 1a
+7. auto assign IP: Enable.
+8. Select security group option:
+9. choose name belal-tech201-app
+10. Secruity group rule select SSH and MY IP.
+11. Secruity group rule 2 select HTTP and anywhere.
+12. Security group rule 3 Custom TCP and anywhere.
+13. Configure storage 8 GB is enough for us as we have little data.
+
+### After configuring instance
+`cd .ssh` this will allows us to get into our `.ssh` folder where our key pair is located 
+we then use command `chmod 400 devops-tech201.pem` to make sure we have the correct permission for accessing the key 
+and then `ssh -i "devops-tech201.pem" ubuntu@ec2-34-253-77-203.eu-west-1.compute.amazonaws.com` this means here is our key for the ubuntu linux machine located in eu-west on AWS.
+after this we run `sudo apt-get install update` to make sure everything is updated 
+and then we install nginx using`sudo apt-get install nginx`
+
+![Alt text](Diagram.jpg)
+
 
 ## Cloud Computing and it's Importance:
 
