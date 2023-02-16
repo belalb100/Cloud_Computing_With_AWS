@@ -6,7 +6,14 @@
 1. We must always use the the region Ireland which when using linux will be known as `eu-west-1`
 2. Always keep our password private and safe and not share with anyone.
 
-### Launching an EC2 instance:
+### Launching an EC2 instance and making a key pair:
+
+### Creating a key pair:
+1. Log in to AWS
+2. Search ec2 and click on it
+3. Click keypair
+4. Generate and download the key
+5. Move the key file to .ssh folder
 
 1. We first select EC2 and create an instance.
 2. we choose the name belal-tech201-app
@@ -28,6 +35,52 @@ we then use command `chmod 400 devops-tech201.pem` to make sure we have the corr
 and then `ssh -i "devops-tech201.pem" ubuntu@ec2-34-253-77-203.eu-west-1.compute.amazonaws.com` this means here is our key for the ubuntu linux machine located in eu-west on AWS.
 after this we run `sudo apt-get install update` to make sure everything is updated 
 and then we install nginx using`sudo apt-get install nginx`
+and we should get this:
+![Alt text](nginx.png)
+
+Just to  to Note: If you get a Connection timed out error - it is a port 22 issue. That means, that your computer might have a Dynamic IP address.
+
+![Alt text](port%2022%20error.png)
+
+Go to your Instance`s Security.
+then your Security Group.
+then click edit your security group configurations: On port 22: Switch to My IP 
+
+Should now work and you should be able to ssh in the instance through your bash terminal.
+
+### Migrating our app folder to our EC2 Instance and running our app via the cloud:
+
+We will do this using `scp` method which stands for secure copy it uses SSH protocol to transfer data between hosts this is the command I used
+
+`scp -i devops-tech201.pem -r C:/Users/belal/OneDrive/Documents/Devops/tech201_virtualisation/tech201_virtualisation/environment ubuntu@ec2-34-253-77-203.eu-west-1.compute.amazonaws.com:/home/ubuntu`
+
+It will take some time to copy everything, but after it is done use the command:
+
+`ssh -i "devops-tech201.pem" ubuntu@ec2-34-253-77-203.eu-west-1.compute.amazonaws.com`
+this will allow us to SSH into our EC2 instance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ![Alt text](Diagram.jpg)
 
