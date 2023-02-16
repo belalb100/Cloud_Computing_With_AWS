@@ -38,9 +38,9 @@ and then we install nginx using`sudo apt-get install nginx`
 and we should get this:
 ![Alt text](nginx.png)
 
-Just to  to Note: If you get a Connection timed out error - it is a port 22 issue. That means, that your computer might have a Dynamic IP address.
+Just to  to Note: If you get a Connection timed out error - it is a port 22 issue. That means that your computer might have a Dynamic IP address which means it is always changing.
 
-![Alt text](port%2022%20error.png)
+
 
 Go to your Instance`s Security.
 then your Security Group.
