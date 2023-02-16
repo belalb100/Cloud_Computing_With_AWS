@@ -127,3 +127,71 @@ Many of these companies use it in a similar way, but Netflix for example uses CD
 
 ### Summary:
 To summarise, although there will always be a market for traditional computing, cloud computing has definitely changed the industry and the way companies approach their computing infrastructure. 
+
+![Alt text](cloud.svg)
+
+
+### Why use a two-tier architecture in AWS?
+
+Scalability: The separation of the web server and database server allows each tier to be scaled independently, so you can handle more traffic by adding more web servers or increasing the database capacity.
+High availability: If one tier goes down, the other tier can still operate, minimizing downtime.
+Security: By separating the web server from the database server, you can implement more secure firewall rules and access controls.
+When to use a two-tier architecture in AWS?
+
+
+### When
+When you expect high traffic or anticipate the need for scaling in the future.
+When you need high availability and fault tolerance.
+When you want to separate security and access controls between the front-end and back-end servers.
+
+### Who
+Who should use a two-tier architecture in AWS?
+
+Web application developers who want to build scalable and reliable applications.
+Organizations that need to meet strict uptime requirements or handle high traffic volumes.
+Businesses that need to handle sensitive data and want to implement strict access controls.
+How to create a two-tier architecture in AWS?
+
+Here is a general overview of how to create a two-tier architecture in AWS:
+
+Create an Amazon VPC to isolate your application within a virtual network.
+Create an Amazon EC2 instance to host your web server and install the necessary software and dependencies.
+Create an Amazon RDS instance to host your database server and configure the necessary security and access controls.
+Connect the web server and database server using the appropriate networking protocols.
+Test your application to ensure it's working as expected.
+
+### How does this fit into DevOps? 
+Implementing a two-tier architecture in AWS can fit into DevOps by enabling faster and more efficient application development and deployment processes. DevOps is an approach that aims to integrate development and operations teams to deliver software more rapidly and reliably.
+
+The following are ways a two-tier architecture in AWS can fit into DevOps:
+
+1. Automation: AWS offers various automation tools, such as AWS CloudFormation, AWS Elastic Beanstalk, and AWS CodeDeploy, that allow developers to quickly create and deploy infrastructure and applications. By automating the provisioning and deployment process, developers can focus on writing code, while operations teams can focus on maintaining the underlying infrastructure.
+
+2. Continuous Integration and Continuous Deployment (CI/CD): A two-tier architecture can be integrated with CI/CD pipelines to automate the build, testing, and deployment process. This allows for faster and more reliable software delivery, with the ability to continuously deploy changes to the production environment.
+
+3. Collaboration: By implementing a two-tier architecture in AWS, development and operations teams can work together more closely, with greater visibility into the infrastructure and code. This allows for better collaboration and communication, leading to faster problem-solving and improved application performance.
+
+4. Monitoring: AWS provides a range of monitoring and logging tools, such as Amazon CloudWatch and AWS CloudTrail, that enable teams to monitor application performance, track changes, and troubleshoot issues. This can help teams quickly identify and resolve issues, leading to better application performance and reliability.
+
+In summary, implementing a two-tier architecture in AWS can fit into DevOps by enabling automation, continuous delivery, collaboration, and monitoring. These practices can help teams deliver software more rapidly, reliably, and efficiently.
+
+### How does this fit into agile/ SCRUM?
+
+Implementing a two-tier architecture in AWS can fit into an Agile/Scrum methodology by enabling teams to deliver software more frequently and respond to changes more quickly. Agile/Scrum is an iterative and incremental approach to software development that emphasizes customer collaboration, flexibility, and continuous improvement.
+
+The following are ways a two-tier architecture in AWS can fit into Agile/Scrum:
+
+1. Iterative Development: Agile/Scrum involves iterative development, with frequent and incremental releases. A two-tier architecture in AWS allows teams to rapidly spin up new instances of web and database servers, enabling them to test and deploy new features more quickly.
+
+2. Collaboration: Agile/Scrum emphasizes collaboration between developers, operations, and stakeholders. A two-tier architecture in AWS enables developers and operations teams to work more closely together, with greater visibility into the infrastructure and code. This can lead to better communication and problem-solving.
+
+3. Continuous Integration and Continuous Deployment (CI/CD): Agile/Scrum requires continuous delivery of working software. A two-tier architecture in AWS can be integrated with CI/CD pipelines to automate the build, testing, and deployment process. This allows teams to rapidly deliver new features to customers.
+
+4. Flexibility: Agile/Scrum requires teams to be flexible and adapt to changing requirements. A two-tier architecture in AWS provides the flexibility to quickly experiment and try new things. Developers can easily spin up new instances of web and database servers to test and deploy new features.
+
+5. Retrospectives: Agile/Scrum involves frequent retrospectives to identify areas for improvement. AWS provides a range of monitoring and logging tools, such as Amazon CloudWatch and AWS CloudTrail, that enable teams to monitor application performance, track changes, and troubleshoot issues. This can help teams identify areas for improvement and implement changes more quickly.
+
+In summary, implementing a two-tier architecture in AWS can fit into an Agile/Scrum methodology by enabling iterative development, collaboration, continuous delivery, flexibility, and retrospectives. These practices can help teams deliver software more rapidly, respond to changes more quickly, and continuously improve their processes.
+
+
+
