@@ -59,13 +59,27 @@ It will take some time to copy everything, but after it is done use the command:
 `ssh -i "devops-tech201.pem" ubuntu@ec2-34-253-77-203.eu-west-1.compute.amazonaws.com`
 this will allow us to SSH into our EC2 instance.
 
+Creating a 2 tier system:
+
+App tier deployed-available on public IP
+
+Create 2nd tier with required dependencies - Ubuntu 18.04, mongodob installed, change mongod.conf 0.0.0.0.
+Need a security group for our database - allow 27017 from anywhere - allow only from app instance
+Go back to the app and create an environment variable with the database endpoint
+Relaunch the app
+Securing architecture with firewalls
+Separate firewall to app, seperate firewall to database
+App is exposed to the world, database is exposed only to app, limiting access to database
 
 
 
 
+### Cloning our EC2 instance `APP` to an AMI (Amazon Maching Image):
+
+![Alt text](ec2%20to%20ami.png)
 
 
-
+First: We need to start our instance then we open gitbash as Admin to go into our ssh folder and from their we `ssh` into our ec2 app machine to make sure it is working before we clone it( we can find the `ssh` command with key pair on AWS website in our instance if we click on instance ID then click `connect` we will locate it their). So once we acces our app and we see it is working we go back to our instance on AWS we select it and then we go to `Actions` in the top right and we select `Images` and then we select create an image and we enter in our details which is name tech201 and app and MAKE SURE we enter which ports we will use as those who come after will know or even us we might come back after several months and not remember which ports we were using, the lastly we select create image at the bottom and the image is now created.
 
 
 
@@ -128,7 +142,7 @@ Many of these companies use it in a similar way, but Netflix for example uses CD
 ### Summary:
 To summarise, although there will always be a market for traditional computing, cloud computing has definitely changed the industry and the way companies approach their computing infrastructure. 
 
-![Alt text](cloud.svg)
+
 
 
 ### Why use a two-tier architecture in AWS?
