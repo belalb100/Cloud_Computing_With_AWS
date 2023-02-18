@@ -85,20 +85,6 @@ First: We need to start our instance then we open gitbash as Admin to go into ou
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-![Alt text](../images/Diagram.jpg)
-
-
 ## Cloud Computing and it's Importance:
 
 ## What is the Cloud
