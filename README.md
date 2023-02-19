@@ -239,7 +239,21 @@ Now to launch our 2 tier architecture we simply update the enviromental variable
 ![Alt text](images/EC2%20to%20AMI%20final.png)
 
 
+### Why use AMI's:
 
+There are a number of reasons why an organization or individual might use AMIs in AWS:
+
+1. Consistency: By using a pre-configured AMI, you can ensure that every instance you launch is configured in the same way.
+
+2. Efficiency: Creating an AMI with the software and configuration you need can save you time and effort compared to manually setting up each instance.
+
+3. Scalability: AMIs can be used to quickly and easily launch multiple instances that are identical in configuration.
+
+4. Disaster recovery: AMIs can be used to restore your system to a known good state if there is a disaster or outage.
+
+5. Flexibility: AMIs can be customized to meet the specific needs of your organization, and you can create multiple AMIs to support different workloads or use cases.
+
+6. Also AMI's save the business money as they are cheaper and more cost friendly to maintain than even stopped instances.
 
 
 

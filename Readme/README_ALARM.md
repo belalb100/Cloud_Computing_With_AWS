@@ -23,3 +23,25 @@
 11. Give your alarm a name and description, and then click "Create Alarm".
 
 Once your alarm is created, you can view it in the CloudWatch Alarms console and manage it as needed.
+
+
+### AWS CloudWatch:
+
+![Alt text](../images/cloudwatch-services.png)
+
+
+AWS CloudWatch is a monitoring and alerting service provided by Amazon Web Services (AWS). It is designed to collect and track metrics, collect and monitor log files, and set alarms for metrics and log events.
+
+CloudWatch provides the following features for monitoring and alerting:
+
+1. Metrics: CloudWatch collects and tracks metrics for various AWS services, including EC2 instances, RDS databases, and Lambda functions. It also allows you to collect and track custom metrics for your own applications.
+
+2. Dashboards: CloudWatch provides customizable dashboards that can display real-time metrics and allow you to quickly view the health of your applications.
+
+3. Alarms: CloudWatch allows you to set alarms that trigger actions based on predefined thresholds or other criteria. For example, you can set an alarm to trigger an automatic scaling action when CPU usage reaches a certain threshold.
+
+4. Logs: CloudWatch can collect and monitor log files from your applications and infrastructure, and provide real-time analysis and troubleshooting capabilities.
+
+5. Events: CloudWatch Events allows you to respond to changes in your AWS environment, such as EC2 instance state changes, and trigger automated actions based on those events.
+
+CloudWatch can help you to identify performance and availability issues in your AWS infrastructure, and take corrective actions before they impact your applications or customers. With its monitoring and alerting capabilities, CloudWatch can help you to maintain the health and stability of your applications and infrastructure.
