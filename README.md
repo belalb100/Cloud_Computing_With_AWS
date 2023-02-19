@@ -193,5 +193,53 @@ The following are ways a two-tier architecture in AWS can fit into Agile/Scrum:
 
 In summary, implementing a two-tier architecture in AWS can fit into an Agile/Scrum methodology by enabling iterative development, collaboration, continuous delivery, flexibility, and retrospectives. These practices can help teams deliver software more rapidly, respond to changes more quickly, and continuously improve their processes.
 
+### Amazon Machin Image (AMI) use case:
+
+- We can stop an EC2 instance and also terminate it after making an AMI of it or image and start it in the exact state it was, this will save us a lot of money.
+
+- It takes a snapshot of the EC2 instance and saves the state of the instance also saving all it's dependencies such as security groups.
+
+- The Image will be available in the same region as the Instance.
+
+- After completely coying the EC2 instance into an AMI and making sure it is running we can now Terminate the EC2 instance which is the same as deleting it.
+
+
+
+### Creating an AMI (Amazon Machine Image):
+
+First we make sure our instance is running in the AWS Cloud then we `ssh` into our `app` virtual machine. We do this by being in our `.ssh` and then using a command that is similar to this: `ssh -i "devops-tech201.pem" ubuntu@ec2-52-214-144-236.eu-west-1.compute.amazonaws.com` that we get from our AWS instance 
+
+then we navigate to the directory with `app.js` and launch the app using `node app.js` command.
+
+We are launching the `app` as we cannot create an image unless it is in a running state as this is how it will be saved.
+
+then we go back to the AWS website selcet our instance `app` and on the `Actions` tab on the top right we selecet `image and templates` then select `Create Image`.
+
+Then we name it as follows `name-group name- VE - ami`
+We will use the same naming convention for our description and also add which ports we will be using as when we come back to it in the future we will remeber which ports we are using and how to use it for example `name-group-VE-ami-port 22-port 3000- ....`
+
+then `create the instance`.
+
+To find our instance from the AWS home page we search EC2 and click on it
+On the left hand side, under `Images` then click `AMIs`
+We can find our image by typing in the name in the search bar
+then we select the image and click `Launch instance from AMI` also we must name it according to:
+`name-group-db-ami` we enter our key which for us is `devops 201` 
+then we select an existing security group and we choose our security group from previous DB, in this step we realise the practicality of naming our security groups as we know which PORTS can be USED.
+
+We then launch the instance and it should have all previous dependecies such as; storage dependencies, security dependencies and monitoring dependencies to name a few.
+
+Now to launch our 2 tier architecture we simply update the enviromental variable in our `app`VE and change it to the new IP of the new DB and then we follow the same steps.
+
+- We seed the database in the app directory:
+`node seeds/seed.js`
+- then launch the app
+`node app.js`
+
+![Alt text](images/EC2%20to%20AMI%20final.png)
+
+
+
+
 
 
