@@ -36,7 +36,7 @@ and then `ssh -i "devops-tech201.pem" ubuntu@ec2-34-253-77-203.eu-west-1.compute
 after this we run `sudo apt-get install update` to make sure everything is updated 
 and then we install nginx using`sudo apt-get install nginx`
 and we should get this:
-![Alt text](../images/nginx.png)
+![Alt text](images/nginx.png)
 
 Just to  to Note: If you get a Connection timed out error - it is a port 22 issue. That means that your computer might have a Dynamic IP address which means it is always changing.
 
@@ -76,7 +76,7 @@ App is exposed to the world, database is exposed only to app, limiting access to
 
 ### Cloning our EC2 instance `APP` to an AMI (Amazon Maching Image):
 
-![Alt text](../images/diagram%20best.png)
+![Alt text](images/diagram%20best.png)
 
 
 First: We need to start our instance then we open gitbash as Admin to go into our ssh folder and from their we `ssh` into our ec2 app machine to make sure it is working before we clone it( we can find the `ssh` command with key pair on AWS website in our instance if we click on instance ID then click `connect` we will locate it their). So once we acces our app and we see it is working we go back to our instance on AWS we select it and then we go to `Actions` in the top right and we select `Images` and then we select create an image and we enter in our details which is name tech201 and app and MAKE SURE we enter which ports we will use as those who come after will know or even us we might come back after several months and not remember which ports we were using, the lastly we select create image at the bottom and the image is now created.
@@ -117,7 +117,7 @@ The main differences between these three types of cloud service are the level of
 
 ### Different types of cloud:
 
-![Alt text](../images/Hybrid,%20Public%20and%20Private.png)
+![Alt text](images/Hybrid,%20Public%20and%20Private.png)
 
 ### Operation expenditure vs Capital expenditure (OpEx vs CapEx).
 Capital expenditure: Will need to by servers, cable, networking equipment whereas Operation expenditure allows us to forgo this and pay for what we use. Which provides companies with very high levels of flexibility. 
