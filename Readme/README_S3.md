@@ -20,3 +20,47 @@ We then `save changes` and now we can see our file if we click on the `object UR
 
 Furthermore in this image below we can see a summary of the whole process and how we used our local host to SSH into our S3 Instance and then from the we were able to use Git Bash to install all the required dependencies and then creat our S3 Bucket and then our file.
 ![Alt text](../images/s3%20diagram.png)
+
+
+
+## How to automate file creation and deletion of an S3 Bucket:
+
+First we made an EC2 instance and then we opened Git Bash and `ssh` inside out EC2 instance after that we installed the following dependencies using the following commands.
+
+`sudo apt install python`
+then
+`sudo apt install python3-pip`
+then
+`sudo apt install awscli`
+then
+`aws configure` and here we enter our "Access Key" and "Secret access key" also our region and prefered file type.
+then
+`pip3 install boto3` if we get an error message do `sudo apt install python-pip` then the previous command.
+
+from there we create a python file for using `nano file_name.py` we enter the following python code:
+
+`import boto3`
+
+#### S3 authentication setup - with aws configure on EC2
+
+#### Create S3 bucket using python-boto3
+`s3 = boto3.resource('s3')`
+`s3.create_bucket(Bucket='belal-tech201-python2', CreateBucketConfiguration={'LocationConstraint': 'eu-west-1'})`
+
+#### Upload data/file to S3 bucket using python-boto3
+`bucket = s3.Bucket('belal-tech201-python2')`
+`bucket.upload_file('C:/Users/belal/.ssh/test1.txt', 'test1.txt')`
+
+# Retrieve content/file from S3 using python-boto3
+`bucket.download_file('test1.txt', 'C:/Users/belal/.ssh/test1.txt')`
+
+# Delete Content from S3 using python-boto3
+`bucket.Object('test1.txt').delete()`
+
+
+
+#### Delete the bucket using python-boto3
+`s3.Bucket('belal-tech201-python2').delete()`
+
+we then save this code and the run it using `python file_name.py` and our bucket should be created with the contents of the bucket also being deleted.
+
