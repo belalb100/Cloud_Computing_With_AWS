@@ -258,6 +258,8 @@ There are a number of reasons why an organization or individual might use AMIs i
 
 ## AWS S3 (Simple Storage Service):
 
+![Alt text](images/AWS%20S3.png)
+
 Amazon S3 (Simple Storage Service) is an object storage service provided by Amazon Web Services (AWS). It is a highly scalable, reliable, and cost-effective cloud storage service that allows users to store and retrieve any amount of data from anywhere in the world.
 
 - Benefits
