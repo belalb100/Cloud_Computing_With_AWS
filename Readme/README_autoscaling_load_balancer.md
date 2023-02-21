@@ -1,3 +1,69 @@
+## Creating an Instance and an Autoscaling Group/ Load Balancer:
+
+First we enter our aws account then select `instances` then select `Launch Templates`, then we select `Create launch template`
+ We choose the following settings:
+
+name and tags: `name-group-ASG-1`
+We enter the same for the description as above:
+we then tick the box for `Provide guidance to help me set up a template that I can use with EC2 Auto Scaling`
+We then select our operating system which is `Ubuntu 18.04 LTS`
+make sure we choose the correct key pair for us devops-tech201
+
+then`Default VPC`
+
+instance type: `t2 micro`
+Key pair: `devops ...`
+
+auto assign IP: Enable.
+
+Select security group option:
+
+choose name belal-tech201-app
+
+Secruity group rule select SSH and MY IP.
+
+Secruity group rule 2 select HTTP and anywhere.
+
+Security group rule 3 Custom TCP and anywhere.
+
+Configure storage 8 GB is enough for us as we have little data.
+
+then we go to `advance` and where it says `User data` at the bottom we enter the following bash commands so ngingx is automatically run.
+
+`#!/bin/bash`
+`sudo apt update -y`
+`sudo apt upgrade -y`
+
+`sudo apt install nginx -y` 
+`sudo systemctl restart nginx`
+`sudo systemctl enable nginx`
+
+If we made any mistakes in the above command it will not work and it will have to be done manually, on Git Bash.
+
+then select `Create launch template`
+
+After this we will launch our Auto Scaling group:
+
+On the bottom left of the AWS page we will find `Auto Scaling Groups` the click create an `Launch configurations` the click `Create Launch Configuration` 
+then we choose our name for our `auto scaling group` then we select our template which is the one we made previous to this step. 
+Then we click `next` We keep our default VPC, then we select our 3 availability zone 1A,1B and 1C
+then we select `next` then we select `attach to a new load balancer` and we choose `Application Load Balancer`(ALB)
+then we select `internet facing`
+then we select `create a target group` in the listners and routing section and leave it on port 80
+then we select `ELB` in the health check option
+then we go to the next page
+then select desired size:2
+maximum size:
+maximum capacity:3 
+then we select `target tracking policy`
+
+In default it will monitor the CPU Utilizationbwhen it reaches 50 it will automatically create a new instance using autoscaling. Select `next`
+Add notification - select `next`
+`Add tags` - this is important s there will be 2 so we need to no which is which, then `Create auto scaling group`.
+Now we simply and copy and past the URL and we should have nginx running on both instances on different URL's
+![Alt text](../images/nginx.png)
+
+
 ## Autoscaling and load balancer (policies, target groups, template, ALB)
 
 AWS Auto Scaling is a service that assists organizations in supervising AWS-based software and infrastructure. The service automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost. 
@@ -45,3 +111,25 @@ A load balancer serves as the single point of contact for clients. The load bala
 
 In this diagram below we can get a visual sense of how Auto scaling and a load balancer will work together, aautoscaling will adjust the amount of compute power and load balancer will distrubute EC2 instance so no one instance is overwhelmed.
 ![Alt text](../images/ALB.png)
+
+
+
+
+
+
+
+
+Launch an instance
+With On-Demand Instances, you pay for compute capacity by the second (for Linux, with a minimum of 60 seconds) or by the hour (for all other operating systems) with no long-term commitments or upfront payments. Launch an On-Demand Instance from your launch template.
+
+Launch instance from this template
+
+Create an Auto Scaling group from your template
+Amazon EC2 Auto Scaling helps you maintain application availability and allows you to scale your Amazon EC2 capacity up or down automatically according to conditions you define. You can use Auto Scaling to help ensure that you are running your desired number of Amazon EC2 instances during demand spikes to maintain performance and decrease capacity during lulls to reduce costs.
+
+Create Auto Scaling group
+
+Create Spot Fleet
+A Spot Instance is an unused EC2 instance that is available for less than the On-Demand price. Because Spot Instances enable you to request unused EC2 instances at steep discounts, you can lower your Amazon EC2 costs significantly. The hourly price for a Spot Instance (of each instance type in each Availability Zone) is set by Amazon EC2, and adjusted gradually based on the long-term supply of and demand for Spot Instances. Spot instances are well-suited for data-analysis, batch jobs, background processing, and optional tasks.
+
+Create Spot Fleet
