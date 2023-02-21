@@ -293,7 +293,7 @@ Data archiving and compliance storage.
 
 - Highly available
 
-S3 is designed to be highly available by distributing data across multiple devices and facilities. When data is uploaded to S3, it is automatically replicated to multiple storage devices in different availability zones within a region.
+S3 is designed to be highly available by distributing data across multiple devices and facilities. When data is uploaded to S3, it is  <u>automatically</u> replicated to multiple storage devices in different availability zones within a region.
 
 S3 uses an object-based storage model, where data is stored in the form of objects, and each object is identified by a unique key. When a request is made to retrieve an object, S3 automatically retrieves the object from multiple storage devices and serves it to the requester. This ensures that even if one storage device or availability zone goes down, the data is still available from another device or zone.
 

@@ -51,10 +51,10 @@ from there we create a python file for using `nano file_name.py` we enter the fo
 `bucket = s3.Bucket('belal-tech201-python2')`
 `bucket.upload_file('C:/Users/belal/.ssh/test1.txt', 'test1.txt')`
 
-# Retrieve content/file from S3 using python-boto3
+#### Retrieve content/file from S3 using python-boto3
 `bucket.download_file('test1.txt', 'C:/Users/belal/.ssh/test1.txt')`
 
-# Delete Content from S3 using python-boto3
+#### Delete Content from S3 using python-boto3
 `bucket.Object('test1.txt').delete()`
 
 
