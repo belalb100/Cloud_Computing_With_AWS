@@ -64,6 +64,21 @@ Now we simply and copy and past the URL and we should have nginx running on both
 ![Alt text](../images/nginx.png)
 
 
+### Creating and Auto Scaling Group for our APP:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Autoscaling and load balancer (policies, target groups, template, ALB)
 
 AWS Auto Scaling is a service that assists organizations in supervising AWS-based software and infrastructure. The service automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost. 
@@ -83,6 +98,8 @@ They now provide additional capabilities such as security, acceleration, and aut
 
 In Simple Autoscaling Policy, you define the threshold value and upper bound. The alarm monitors the metric values. When the metric value breaches the threshold, the scaling policy acts. The instances are added or removed as per the policy. The Amazon Web Services has modified the Autoscaling Policies and new features have been introduced. It now lets you scale in and scale out your instances in percentage terms of the running instances. You can now define multiple scaling policies in a single AutoScaling Policy based on your metric values. Below is an example of an Auto scaling policy.
 ![Alt text](../images/Autoscaling%20policy.png)
+
+
 
 
 ### What is target group in Auto Scaling?
