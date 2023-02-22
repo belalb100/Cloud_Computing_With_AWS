@@ -1,5 +1,35 @@
 # VPC
 
+### How to create a VPC with and Internet gateway, public subnet and a route table:
+
+
+So firstly we make our VPC we can do this by going to our AWS console at the top searching for VPC nd selecting the first VPC option once there we click `Create VPC` we then select `VPC only` we enter the name we would like to call it so for example `belal-tech201-VPC-Demo` we then select 
+`IPv4 CIDR manual input`
+we then enter our VPC CIDR block number which is `10.0.0.0/16` we keep tenancy at `default` then we click `create`.
+
+Afterward on the left hand side tab we select `Internet gateways` we give it a name as per our naming convention, then we select `create internet gateway` 
+
+Once our IGW is made we select it and then go to the top right where is says `Actions` and we select `Attach` and we attach it to our VPC.
+
+Next we go to the left and select `Subnets` we then select `create subnet` we select our VPC at the first option and then we give it a clear name that it is `public` for example and we select our unique CIDR block. 
+
+
+Next we go to our route table and edit our options there, so it can recieve traffic and know where to send it.  
+
+And then we are done and now we can run an instance with this VPC while creating a new security group as our other security group was for another VPC and we should have the APP page working like this:
+
+![Alt text](../images/Sparta_test_app.png)
+
+
+
+
+
+
+
+
+
+
+
 ### What is a VPC, how does it work and what are it's benefits to AWS cloud:
 
 A Virtual Private Cloud (VPC) is a logically isolated virtual network in the Amazon Web Services (AWS) cloud. It allows users to create a private network within the public AWS infrastructure, which can be used to host resources such as EC2 instances, RDS databases, and other AWS services.
