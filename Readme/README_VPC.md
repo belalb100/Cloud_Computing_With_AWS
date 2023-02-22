@@ -68,3 +68,7 @@ Now, let's say you want to create a custom route to allow resources within the p
 Destination: 10.0.2.0/24
 Target: local
 This route ensures that any traffic destined for the private subnet is handled by the local VPC router and directed to the resources within the private subnet.
+
+
+In this Image we have a basic example of how all these different aspects would come together. The user would connect to our website access being granted using the internet gateway and the user being routed there by our route table and they would only have access to our public subnet and not our private subnet.
+![Alt text](../images/VPC-internetgateway-route.jpeg)
