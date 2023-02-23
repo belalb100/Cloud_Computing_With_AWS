@@ -22,6 +22,22 @@ And then we are done and now we can run an instance with this VPC while creating
 
 
 
+### Launching a 2 tier architecture on your personal VPC, with the app and db instances on your two, separate subnets:
+
+So once we have created a public subnet as in the task above we now go to our AWS website and from there we search for VPC at the top and select `VPC` then in the left side tool-bar `Subnet` then we select `create subnet` and for our options we select our VPC in `VPC ID` then we select a `Subnet name`using our naming convention the we select a CIDR block that is not in use the we click `Create subnet`.
+
+We then go to the left side tab and select `Route tables` once there we select our subnet that we wish to make private. we then select `Routes` in the taskbar below we then select `Edit routes` making sure the only options available is the one shown below.
+
+![Alt text](../images/edit%20route.png)
+
+
+After this we got to our instances and select `create an instance` we choose a name as per our convention the we choose an `AMI` that has all the pre-requesites of our database which choose our `instance type` and `key pair`
+
+we then go to `Network settings` and click `Edit` at the top right corner and select the VPC we created and it should also automatically select the private subnet we created, we `Disable` Auto assign public IP 
+we then scroll down a very little and select `Select an existing security group` and we select one we had already created but if it hasn't been create we can select `Create security group` and the make sure port `3000` and `27017` are available after this we select `Create instance`
+
+Now we make sure both our `app` and `DB` instance are running and then `ssh` in to our app instance and change our instance variable with the following command `export DB_HOST=mongodb://INSERT DB PRIVATE IP:27017/posts` then we enter the command `printenv DB_HOST` to make sure it has changed then we cd to our folder we our app.js file is located and then we enter `npm install`
+
 
 
 
