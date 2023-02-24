@@ -1,9 +1,21 @@
 # What is CI/CD
 
+CI stands for Continuous Integration. It is a software development practice that involves continuously merging code changes from multiple developers into a shared repository, and running automated tests to ensure that the code is functioning correctly.
+
+CD stands for Continuous Delivery or Continuous Deployment. It is a software development practice that involves automating the process of delivering software to production.
+
 CI/CD is a method to frequently deliver apps to customers by introducing automation into the stages of app development. The main concepts attributed to CI/CD are continuous integration, continuous delivery, and continuous deployment.
 
 
+
+
 ### What is the difference between CD & CDE use cases?
+
+CD and CDE are two related but different terms in the context of software development:
+
+CD stands for Continuous Delivery or Continuous Deployment. These are two related practices in software development that involve automating the process of delivering software to production.
+
+CDE stands for Container Development Environment. This refers to a development environment that is built using containers, which are lightweight and portable units of software that can be used to package and deploy applications.
 
 
 CD is an extension of CI and CDE is a further extension of CD. While CI focuses on helping developers by ensuring each bit of new code is bug-free and functional, CD is more about releasing updates and changes in a quick and safe manner. CDE is about creating a unified pipeline for software releases and increasing the velocity of delivery. Combining all three means that when new source code is committed it can be deployed to production automatically and within minutes (or even seconds!), assuming it passes all the relevant tests.
