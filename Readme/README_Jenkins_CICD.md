@@ -1,3 +1,35 @@
+### Setting up a CI continuous integration
+
+Firstly we log in the Jenkins once there `we create a job` give it a name and select `freestyle` then `ok` we give it a description so we know what we are using it for.
+
+We then select `Discard old builds` the `max` we choose `3` the select `Github project` then we go to GitHub and copy and paste our HTTPS URL to `GitHub project` option in Jenkins next on Jenkins we select `restrict  where this project can run` and select `sparta` 
+then in source code management we select `Git` and then in GitHub we copy our SSH URL and then paste it in `Repo URL` in Jenkins and then we go back to `GitHub` and make a key from with our repo that we are copying and then in `Build Environment` in Jenkins we select `Provide node and npm bin` option and we select `Sparta` then we select `Execute shell` in the Build option and enter `cd app/app` then `npm install` then `npm test` then we now go in to GitBash and start the process of making a key which is as follows.
+
+`cd .ssh` into our SSH folder then we enter `ssh-keygen -t rsa -b 4096 -C "emailaddress` and then press enter. `b` means bytes here and `C` is us specifying the owner of the key.
+Next we name our RSA key for example`github-key` then it will ask us for a passphrase we can leave this blank by pressing enter twice.
+
+Next we go to our github account and go to settings and then click on `SSH and GPG keys` then we select new `SSH keys` then we give it a `Title` this title should refer to what the key is going to be used for for example Jenkins etc. Next we go back to Git Bash and git the public part of our key and copy and paste in into the key area of GitHub and then we select `Add SSH key` and we should see it added to our SSH keys.
+
+Now in our Gitbash we are going to add a private key to our ssh by using the following command in the same Git Bash terminal with have been using. ``eval `ssh-agent -s`` we do this to install an agent you must use the little quote like symbol, we will then get a process I.D then we enter `ssh-add keyname` and it should tell us identity added then we enter `ssh -T git@github.com` to make sure it was successful.
+
+Next we use `cat private_key_folder` copy its contents and paste it in to key section in Jenkins we it says `Add` and a key image once there we select a user name and select `enter directly` and then copy our private key.
+
+we make sure we update the following:
+
+`Branch specifier:` */main
+
+`Build Triggers:` First iteration we will trigger it manually
+
+B`uild environment:` Provide Node& npm check box(We provided all the plugins needed)
+
+`Build steps: Execute shell`
+
+Next in our GitBash we need to make make a change to our README.md file to see if CI is working once we do that using `nano README.md` and pushing it to our repo and we should see the changes made.
+
+
+
+
+
 # What is CI/CD
 
 CI stands for Continuous Integration. It is a software development practice that involves continuously merging code changes from multiple developers into a shared repository, and running automated tests to ensure that the code is functioning correctly.
